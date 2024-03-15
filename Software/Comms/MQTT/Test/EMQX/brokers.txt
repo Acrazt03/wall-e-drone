@@ -1,0 +1,15 @@
+Free broker
+Broker: broker.emqx.io
+TCP Port: 1883
+WebSocket Port: 8083
+SSL/TLS Port: 8883
+WebSocket Secure Port: 8084
+CA Certificate: broker.emqx.io-ca.crt
+
+My Instance:
+Broker: x22e12be.ala.us-east-1.emqxsl.com
+TCP Port: 1883
+WebSocket Port: 8083
+SSL/TLS Port: 8883
+WebSocket Secure Port: 8084
+CA Certificate: emqxsl-ca.crt

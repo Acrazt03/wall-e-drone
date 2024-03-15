@@ -1,0 +1,5 @@
+helpful code:
+#https://docs.emqx.com/en/cloud/latest/connect_to_deployments/python_sdk.html#the-full-code
+
+To stream video:
+https://medium.com/@pritam.mondal.0711/stream-live-video-from-client-to-server-using-opencv-and-paho-mqtt-674d3327e8b3

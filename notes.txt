@@ -1,0 +1,52 @@
+Modes needed:
+Guided	A	A	Y	Navigates to single points commanded by GCS
+Land	A	s	(Y)	Reduces altitude to ground level, attempts to go straight down
+Loiter	s	s	Y	Holds altitude and position, uses GPS for movements
+PosHold	s	+	Y	Like loiter, but manual roll and pitch when sticks not centered
+RTL	A	A	Y	Returns above takeoff location, may also include landing
+SmartRTL	A	A	Y	RTL, but traces path to get home
+
+Stabilize does not keep you in the same place, Loiter does
+
+Auto mode follows predefined path on the FC's memory
+
+Guided mode just follows gps position commands from the GCS (in my case, the jetson)
+
+Ardupilot's page on movement commands on Guided mode:
+https://ardupilot.org/dev/docs/copter-commands-in-guided-mode.html#movement-command-details
+
+This video explains it very well:
+https://www.youtube.com/watch?v=yyt4VjBRG_Y&list=PLy9nLDKxDN68cwdt5EznyAul6R8mUSNou&index=4
+
+pretty useful page:
+https://www.ardusub.com/developers/pymavlink.html#send-rc-joystick
+
+you will have to add the /send/ endpoint to the FC API
+
+Loiter mode expects pilot input, so we maybe will have to fake it (may not work)!
+Other way that I'm thinking of is to use the PPM encoder and the i2c PWM bridge to fake a radio signal from the jetson (I don't fully know how that works yet)
+
+We will use Guided mode for AI cmds and Loiter mode for human cmds
+
+Do not use ACRO or STABILIZE mode!
+
+Remenber to ser all the failsafe modes (example: battery, GCS):
+
+https://ardupilot.org/copter/docs/failsafe-landing-page.html
+
+
+We will have to get a Windows cloud instance to run:
+The ground station (Access trough the hypervisor)
+The Mosquitto (probably) MQTT Broker
+The client App
+The way to upload files to the drone (to send .py scripts) (maybe you can make the drone download it by itself from a sended url and then run it)
+The reverse SSH tunnel
+
+TODOs:
+1. Entender GStreamer, deepstream y todo de IA en la orin
+2. Implementar el main orchestrer (ejecuta los procesos y espera comandos MQTT para estos procesos)
+3. Activar el 4G en la orin
+4. Crear y montar garra
+5. Montar camara
+6. programar programa autonomo
+

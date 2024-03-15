@@ -1,0 +1,27 @@
+Pasos:
+Acceder a github
+Generar Key
+Usar esa key para clonar el repositorio
+Instalar pip by sudo apt python3-pip
+Instalar requirements
+instalar codium (get the .deb file from: https://github.com/VSCodium/vscodium/releases) by sudo apt install ./codium_1.80.1.23194_arm64.deb
+Add the MagicPython and Python extensions to vscodium
+Add the current user to dialout group: sudo adduser acrazt dialout
+then reboot and you are good to go!
+
+To install mavproxy:
+run sudo apt-get install python3-dev python3-opencv python3-wxgtk4.0 python3-pip python3-matplotlib python3-lxml python3-pygame
+
+and then: pip3 install PyYAML mavproxy --user
+
+and finally: echo 'export PATH="$PATH:$HOME/.local/bin"' >> ~/.bashrc
+
+sudo apt-get purge modemmanager
+
+pip install -U pymavlink
+
+now you can run mavproxy.py from anywhere
+
+4G
+sudo apt-get install minicom
+
